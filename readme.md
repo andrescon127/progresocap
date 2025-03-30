@@ -12,6 +12,13 @@ Corporate website for Progreso Capital, featuring:
 - JavaScript
 - Responsive design
 
+## Features
+- Single-page design with smooth scrolling navigation
+- Responsive layout that works on all devices
+- Interactive contact form
+- Clean, modern design
+- Sections: Home, About, Leadership, Contact
+
 ## Deployment
 The site is deployed on GitHub Pages at: https://andrescon127.github.io/progresocap/
 
