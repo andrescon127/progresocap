@@ -1,0 +1,383 @@
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: #2C3E50;
+    background-color: #fff;
+}
+
+.container {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Navigation */
+.navbar {
+    position: fixed;
+    top: 0;
+    width: 100%;
+    background: #fff;
+    padding: 25px 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transform: none !important; /* Prevents header from disappearing */
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    background: #fff;
+    margin-right: 20px;
+}
+
+.nav-links li {
+    margin-left: 40px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding: 0.5rem 0;
+}
+
+.nav-links a:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #007bff;
+    transition: width 0.3s;
+}
+
+.nav-links a:hover:after {
+    width: 100%;
+}
+
+/* Logo styling */
+.logo {
+    padding: 0 20px;
+}
+
+.logo a {
+    display: block;
+}
+
+.logo img {
+    height: 102px;  /* Increased from 85px by 20% */
+    width: auto;
+    display: block;
+}
+
+/* Mobile menu button */
+.menu-toggle {
+    display: none;
+    background: none;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+    padding: 10px;
+    margin-right: 20px;
+    z-index: 1001;
+}
+
+/* Responsive design */
+@media screen and (max-width: 768px) {
+    .menu-toggle {
+        display: block;
+    }
+
+    .navbar {
+        padding: 20px 0;
+    }
+
+    .logo img {
+        height: 78px;  /* Increased from 65px by 20% */
+    }
+
+    .nav-links {
+        display: none;
+        position: fixed;
+        top: 118px;  /* Increased to account for larger header */
+        left: 0;
+        width: 100%;
+        background: white;
+        flex-direction: column;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        margin-right: 0;
+    }
+
+    .nav-links.active {
+        display: flex;
+    }
+
+    .nav-links li {
+        margin: 15px 20px;
+        text-align: center;
+    }
+
+    /* Section padding adjustments */
+    .section {
+        padding: 60px 0;
+    }
+
+    /* Container padding adjustments */
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Typography adjustments */
+    h1 {
+        font-size: 2.5rem;
+    }
+
+    h2 {
+        font-size: 2rem;
+    }
+
+    /* Form adjustments */
+    .contact-form {
+        padding: 0 15px;
+    }
+
+    /* Ensure text remains centered on mobile */
+    h1, h2, h3, p, .lead {
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    /* Adjust feature list on mobile */
+    .feature-list {
+        padding: 0 30px;
+    }
+
+    /* Ensure form stays within bounds */
+    .contact-form {
+        padding: 0 15px;
+    }
+}
+
+/* Sections */
+.section {
+    padding: 100px 0;
+    border-bottom: 1px solid #eee;
+}
+
+h1, h2, h3 {
+    color: #1a1a1a;
+    font-weight: 700;
+    max-width: 720px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+h1 {
+    font-size: 3.5rem;
+    line-height: 1.2;
+    margin-bottom: 2rem;
+    color: #007bff;
+}
+
+h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+}
+
+h3 {
+    font-size: 1.75rem;
+    margin-bottom: 1rem;
+}
+
+/* Standardize all text elements */
+p, .lead, .feature-list li {
+    max-width: 720px;
+    margin-bottom: 1.25rem;
+    color: #2C3E50;
+    text-align: left;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.lead {
+    font-size: 1.25rem;
+    margin-bottom: 2rem;
+}
+
+/* Feature list standardization */
+.feature-list {
+    list-style: none;
+    margin: 2rem auto;
+    padding: 0;
+    max-width: 720px;
+}
+
+.feature-list li {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+    position: relative;
+    text-align: left;
+}
+
+.feature-list li:before {
+    content: "•";
+    color: #007bff;
+    position: absolute;
+    left: 0;
+}
+
+/* Section spacing standardization */
+.advantage-section,
+.criteria-section,
+.leader-profile,
+.leadership-approach,
+.contact-intro {
+    margin: 3rem 0;
+}
+
+/* Contact Form */
+.contact-form {
+    max-width: 720px;
+    margin: 2rem auto;
+}
+
+.form-group {
+    margin-bottom: 1.5rem;
+}
+
+/* Standardize form styling */
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 1rem;
+    border: 2px solid #e1e1e1;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    color: #2C3E50;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    text-align: left;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+    color: #6c757d;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+
+.form-group textarea {
+    min-height: 150px;
+    resize: vertical;
+}
+
+/* Ensure consistent form focus states */
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 0 3px rgba(0,123,255,0.1);
+    outline: none;
+}
+
+/* Footer */
+footer {
+    background: #007bff;
+    color: white;
+    padding: 40px 0;
+}
+
+.footer-nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+}
+
+.footer-nav li {
+    margin: 0 15px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+}
+
+/* Button styling */
+.cta-button,
+.submit-button {
+    display: block;
+    width: fit-content;
+    margin: 2rem auto;
+    padding: 1rem 2rem;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: #fff;
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    border: none;
+    border-radius: 6px;
+    text-decoration: none;
+    transition: transform 0.2s, box-shadow 0.2s;
+    cursor: pointer;
+}
+
+.cta-button:hover,
+.submit-button:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,123,255,0.2);
+}
+
+/* Section Styling */
+.hero-section {
+    padding-top: 200px;
+}
+
+/* Update responsive styles */
+@media screen and (max-width: 768px) {
+    h1 {
+        font-size: 2.5rem;
+    }
+    
+    h2 {
+        font-size: 2rem;
+    }
+    
+    h3 {
+        font-size: 1.5rem;
+    }
+    
+    .lead {
+        font-size: 1.15rem;
+    }
+    
+    .section {
+        padding: 60px 0;
+    }
+    
+    .container {
+        padding: 0 15px;
+    }
+
+    /* Keep headlines centered on mobile */
+    h1, h2, h3 {
+        text-align: center;
+        padding: 0 15px;
+    }
+
+    /* Keep body text left-aligned on mobile */
+    p, .lead, .feature-list li {
+        text-align: left;
+        padding: 0 15px;
+    }
+}
